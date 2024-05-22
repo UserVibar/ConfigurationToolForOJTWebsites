@@ -38,6 +38,7 @@ namespace ConfigurationTool
                     this.folderPath = dlg.SelectedPath;
                     Properties.Settings.Default.FolderPath = dlg.SelectedPath;
                     Properties.Settings.Default.Save();
+                    this.LoadForm();
                 }
             }
         }
@@ -52,13 +53,14 @@ namespace ConfigurationTool
                 if (result == DialogResult.OK)
                 {
                     this.Icon.Image.Dispose();
+                    this.Icon.Image = null;
                     File.Copy(ofd.FileName, Path.Combine(this.folderPath + "/public/Icon.png"), true);
                     this.Icon.Image = Image.FromFile(this.folderPath + "/public/Icon.png");
                 }
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void LoadForm()
         {
             this.PRSSystemFolderPath.Text = Properties.Settings.Default.FolderPath;
 
@@ -79,8 +81,35 @@ namespace ConfigurationTool
                         this.Icon.Image = Image.FromFile(this.folderPath + "/public/Icon.png");
                         this.Icon.SizeMode = PictureBoxSizeMode.Zoom;
                     }
+                } else
+                {
+                    this.CompanyName.Enabled = false;
+                    this.IconButton.Enabled = false;
+                    this.Host.Enabled = false;
+                    this.Port.Enabled = false;
+                    this.DBName.Enabled = false;
+                    this.Username.Enabled = false;
+                    this.Password.Enabled = false;
+
+                    if (File.Exists(this.folderPath + "/public/Icon.png"))
+                    {
+                        this.Icon.Image = Image.FromFile(this.folderPath + "/public/Icon.png");
+                        this.Icon.SizeMode = PictureBoxSizeMode.Zoom;
+                    } else
+                    {
+                        if (this.Icon.Image != null)
+                        {
+                            this.Icon.Image.Dispose();
+                            this.Icon.Image = null;
+                        }
+                    }
                 }
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.LoadForm();
         }
     }
 }

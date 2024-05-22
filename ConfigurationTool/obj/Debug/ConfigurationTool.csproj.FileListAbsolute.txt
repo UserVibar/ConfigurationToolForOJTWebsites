@@ -8,3 +8,13 @@ C:\Users\Admin\source\repos\ConfigurationTool\ConfigurationTool\obj\Debug\Config
 C:\Users\Admin\source\repos\ConfigurationTool\ConfigurationTool\obj\Debug\ConfigurationTool.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\ConfigurationTool\ConfigurationTool\obj\Debug\ConfigurationTool.exe
 C:\Users\Admin\source\repos\ConfigurationTool\ConfigurationTool\obj\Debug\ConfigurationTool.pdb
+C:\Users\Admin\Documents\PRS\System\Configuration_Tool\ConfigurationTool\bin\Debug\ConfigurationTool.exe.config
+C:\Users\Admin\Documents\PRS\System\Configuration_Tool\ConfigurationTool\bin\Debug\ConfigurationTool.exe
+C:\Users\Admin\Documents\PRS\System\Configuration_Tool\ConfigurationTool\bin\Debug\ConfigurationTool.pdb
+C:\Users\Admin\Documents\PRS\System\Configuration_Tool\ConfigurationTool\obj\Debug\ConfigurationTool.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\PRS\System\Configuration_Tool\ConfigurationTool\obj\Debug\ConfigurationTool.Form1.resources
+C:\Users\Admin\Documents\PRS\System\Configuration_Tool\ConfigurationTool\obj\Debug\ConfigurationTool.Properties.Resources.resources
+C:\Users\Admin\Documents\PRS\System\Configuration_Tool\ConfigurationTool\obj\Debug\ConfigurationTool.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\PRS\System\Configuration_Tool\ConfigurationTool\obj\Debug\ConfigurationTool.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\PRS\System\Configuration_Tool\ConfigurationTool\obj\Debug\ConfigurationTool.exe
+C:\Users\Admin\Documents\PRS\System\Configuration_Tool\ConfigurationTool\obj\Debug\ConfigurationTool.pdb
