@@ -71,6 +71,8 @@ namespace ConfigurationTool
         private void Load_Form()
         {
             this.PRSSystemFolderPath.Text = Properties.Settings.Default.FolderPath;
+            this.Server_Host.Text = Properties.Settings.Default.Host;
+            this.Server_Port.Text = Properties.Settings.Default.Port;
 
             if (!string.IsNullOrEmpty(this.folderPath))
             {
