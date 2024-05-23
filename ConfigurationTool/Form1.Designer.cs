@@ -43,12 +43,18 @@
             this.Username = new System.Windows.Forms.TextBox();
             this.Password = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Connection_Button = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.IconButton = new System.Windows.Forms.Button();
             this.Icon = new System.Windows.Forms.PictureBox();
             this.CompanyName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.Reset = new System.Windows.Forms.Button();
+            this.Save = new System.Windows.Forms.Button();
+            this.Output_Box = new System.Windows.Forms.RichTextBox();
+            this.Clear = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -57,13 +63,15 @@
             // 
             // Start_Server
             // 
-            this.Start_Server.Location = new System.Drawing.Point(12, 440);
+            this.Start_Server.Enabled = false;
+            this.Start_Server.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Start_Server.Location = new System.Drawing.Point(512, 466);
             this.Start_Server.Name = "Start_Server";
-            this.Start_Server.Size = new System.Drawing.Size(327, 23);
+            this.Start_Server.Size = new System.Drawing.Size(411, 23);
             this.Start_Server.TabIndex = 0;
             this.Start_Server.Text = "Start Server";
             this.Start_Server.UseVisualStyleBackColor = true;
-            this.Start_Server.Click += new System.EventHandler(this.button1_Click);
+            this.Start_Server.Click += new System.EventHandler(this.Start_Click);
             // 
             // PRSSystemFolderPath
             // 
@@ -186,11 +194,13 @@
             this.Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Password.Location = new System.Drawing.Point(113, 159);
             this.Password.Name = "Password";
+            this.Password.PasswordChar = '*';
             this.Password.Size = new System.Drawing.Size(208, 20);
             this.Password.TabIndex = 6;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.Connection_Button);
             this.groupBox1.Controls.Add(this.Host);
             this.groupBox1.Controls.Add(this.Password);
             this.groupBox1.Controls.Add(this.label2);
@@ -204,10 +214,21 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 246);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(327, 188);
+            this.groupBox1.Size = new System.Drawing.Size(327, 214);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PRS System Database";
+            // 
+            // Connection_Button
+            // 
+            this.Connection_Button.Enabled = false;
+            this.Connection_Button.Location = new System.Drawing.Point(113, 185);
+            this.Connection_Button.Name = "Connection_Button";
+            this.Connection_Button.Size = new System.Drawing.Size(208, 23);
+            this.Connection_Button.TabIndex = 11;
+            this.Connection_Button.Text = "Test Connection";
+            this.Connection_Button.UseVisualStyleBackColor = true;
+            this.Connection_Button.Click += new System.EventHandler(this.Connection_Button_Click);
             // 
             // groupBox2
             // 
@@ -272,18 +293,76 @@
             this.label7.TabIndex = 4;
             this.label7.Text = "Name:";
             // 
+            // Reset
+            // 
+            this.Reset.Enabled = false;
+            this.Reset.Location = new System.Drawing.Point(12, 466);
+            this.Reset.Name = "Reset";
+            this.Reset.Size = new System.Drawing.Size(157, 23);
+            this.Reset.TabIndex = 9;
+            this.Reset.Text = "Reset Changes";
+            this.Reset.UseVisualStyleBackColor = true;
+            this.Reset.Click += new System.EventHandler(this.Form1_Load);
+            // 
+            // Save
+            // 
+            this.Save.Enabled = false;
+            this.Save.Location = new System.Drawing.Point(182, 466);
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(157, 23);
+            this.Save.TabIndex = 10;
+            this.Save.Text = "Save Changes";
+            this.Save.UseVisualStyleBackColor = true;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
+            // 
+            // Output_Box
+            // 
+            this.Output_Box.Location = new System.Drawing.Point(345, 23);
+            this.Output_Box.Name = "Output_Box";
+            this.Output_Box.ReadOnly = true;
+            this.Output_Box.Size = new System.Drawing.Size(578, 437);
+            this.Output_Box.TabIndex = 11;
+            this.Output_Box.Text = "";
+            // 
+            // Clear
+            // 
+            this.Clear.Location = new System.Drawing.Point(345, 464);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(161, 23);
+            this.Clear.TabIndex = 12;
+            this.Clear.Text = "Clear Output";
+            this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(345, 8);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(59, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Terminal:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(351, 472);
+            this.ClientSize = new System.Drawing.Size(935, 499);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.Clear);
+            this.Controls.Add(this.Output_Box);
+            this.Controls.Add(this.Save);
+            this.Controls.Add(this.Reset);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Choose_Folder);
             this.Controls.Add(this.PRSSystemFolderPath);
             this.Controls.Add(this.Start_Server);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configuration Tool";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
@@ -320,6 +399,12 @@
         private System.Windows.Forms.PictureBox Icon;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button IconButton;
+        private System.Windows.Forms.Button Reset;
+        private System.Windows.Forms.Button Save;
+        private System.Windows.Forms.Button Connection_Button;
+        private System.Windows.Forms.RichTextBox Output_Box;
+        private System.Windows.Forms.Button Clear;
+        private System.Windows.Forms.Label label8;
     }
 }
 
