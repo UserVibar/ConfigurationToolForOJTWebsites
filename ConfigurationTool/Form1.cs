@@ -234,6 +234,8 @@ namespace ConfigurationTool
         {
             if(!this.isOpened)
             {
+                this.Start_Server.Text = "Close Server";
+
                 Properties.Settings.Default.Host = this.Server_Host.Text;
                 Properties.Settings.Default.Port = this.Server_Port.Text;
                 Properties.Settings.Default.Save();
@@ -247,13 +249,15 @@ namespace ConfigurationTool
                 };
 
                 this.process.StartInfo = startInfo;
-                this.Start_Server.Enabled = false;
                 this.isOpened = true;
 
                 process.Start();
 
                 process.BeginOutputReadLine();
                 process.BeginErrorReadLine();
+            } else
+            {
+                process.CloseMainWindow();
             }
         }
 
@@ -268,8 +272,7 @@ namespace ConfigurationTool
             {
                 this.Output_Box.Text += "Server Closed!";
                 this.Output_Box.Text += "\n";
-
-                this.Start_Server.Enabled = true;
+                this.Start_Server.Text = "Start Server";
             });
         }
 
