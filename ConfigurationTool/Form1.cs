@@ -102,16 +102,6 @@ namespace ConfigurationTool
                         this.Icon.Image = Image.FromFile(this.folderPath + "/public/Icon.png");
                         this.Icon.SizeMode = PictureBoxSizeMode.Zoom;
                     }
-
-                    this.startInfo = new ProcessStartInfo("cmd.exe", "/C cd " + folderPath + " & php artisan serve --host 192.168.8.62 --port 8080")
-                    {
-                        UseShellExecute = false,
-                        CreateNoWindow = false,
-                        RedirectStandardOutput = true,
-                        RedirectStandardError = true,
-                    };
-
-                    this.process.StartInfo = startInfo;
                 } else
                 {
                     this.CompanyName.Enabled = false;
@@ -242,6 +232,19 @@ namespace ConfigurationTool
         {
             if(!this.isOpened)
             {
+                Properties.Settings.Default.Host = this.Server_Host.Text;
+                Properties.Settings.Default.Port = this.Server_Port.Text;
+                Properties.Settings.Default.Save();
+
+                this.startInfo = new ProcessStartInfo("cmd.exe", "/C cd " + folderPath + " & php artisan serve --host " + Properties.Settings.Default.Host +" --port " + Properties.Settings.Default.Port)
+                {
+                    UseShellExecute = false,
+                    CreateNoWindow = false,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                };
+
+                this.process.StartInfo = startInfo;
                 this.Start_Server.Enabled = false;
                 this.isOpened = true;
 

@@ -55,6 +55,10 @@
             this.Output_Box = new System.Windows.Forms.RichTextBox();
             this.Clear = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.Server_Host = new System.Windows.Forms.TextBox();
+            this.Server_Port = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -317,10 +321,10 @@
             // 
             // Output_Box
             // 
-            this.Output_Box.Location = new System.Drawing.Point(345, 23);
+            this.Output_Box.Location = new System.Drawing.Point(345, 71);
             this.Output_Box.Name = "Output_Box";
             this.Output_Box.ReadOnly = true;
-            this.Output_Box.Size = new System.Drawing.Size(578, 437);
+            this.Output_Box.Size = new System.Drawing.Size(578, 389);
             this.Output_Box.TabIndex = 11;
             this.Output_Box.Text = "";
             // 
@@ -338,17 +342,55 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(345, 8);
+            this.label8.Location = new System.Drawing.Point(342, 55);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(59, 13);
             this.label8.TabIndex = 13;
             this.label8.Text = "Terminal:";
+            // 
+            // Server_Host
+            // 
+            this.Server_Host.Location = new System.Drawing.Point(345, 25);
+            this.Server_Host.Name = "Server_Host";
+            this.Server_Host.Size = new System.Drawing.Size(329, 20);
+            this.Server_Host.TabIndex = 14;
+            // 
+            // Server_Port
+            // 
+            this.Server_Port.Location = new System.Drawing.Point(680, 25);
+            this.Server_Port.Name = "Server_Port";
+            this.Server_Port.Size = new System.Drawing.Size(243, 20);
+            this.Server_Port.TabIndex = 15;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(345, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(37, 13);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Host:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(677, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(34, 13);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Port:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(935, 499);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.Server_Port);
+            this.Controls.Add(this.Server_Host);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.Clear);
             this.Controls.Add(this.Output_Box);
@@ -405,6 +447,10 @@
         private System.Windows.Forms.RichTextBox Output_Box;
         private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox Server_Host;
+        private System.Windows.Forms.TextBox Server_Port;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }
 

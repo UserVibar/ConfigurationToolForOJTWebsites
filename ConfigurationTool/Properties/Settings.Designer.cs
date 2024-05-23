@@ -34,5 +34,29 @@ namespace ConfigurationTool.Properties {
                 this["FolderPath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Host {
+            get {
+                return ((string)(this["Host"]));
+            }
+            set {
+                this["Host"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Port {
+            get {
+                return ((string)(this["Port"]));
+            }
+            set {
+                this["Port"] = value;
+            }
+        }
     }
 }
