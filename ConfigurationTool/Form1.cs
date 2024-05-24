@@ -20,6 +20,7 @@ namespace ConfigurationTool
         private Dictionary<string, string> keyValuePairs = new Dictionary<string, string>();
         private Process process;
         private ProcessStartInfo startInfo;
+        private ProcessStartInfo startWebpageStartInfo;
         private bool isOpened = false;
 
         public Form1()
@@ -240,6 +241,8 @@ namespace ConfigurationTool
                 Properties.Settings.Default.Port = this.Server_Port.Text;
                 Properties.Settings.Default.Save();
 
+                startWebpageStartInfo = new ProcessStartInfo("http://" + Properties.Settings.Default.Host + ":" + Properties.Settings.Default.Port + "/login");
+
                 this.startInfo = new ProcessStartInfo("cmd.exe", "/C cd " + folderPath + " & php artisan serve --host " + Properties.Settings.Default.Host +" --port " + Properties.Settings.Default.Port)
                 {
                     UseShellExecute = false,
@@ -255,7 +258,10 @@ namespace ConfigurationTool
 
                 process.BeginOutputReadLine();
                 process.BeginErrorReadLine();
-            } else
+
+                Process.Start(startWebpageStartInfo);
+            }
+            else
             {
                 process.CloseMainWindow();
             }

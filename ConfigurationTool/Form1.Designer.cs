@@ -1,4 +1,6 @@
-﻿namespace ConfigurationTool
+﻿using System.Windows.Forms;
+
+namespace ConfigurationTool
 {
     partial class Form1
     {
@@ -404,7 +406,6 @@
             this.Controls.Add(this.PRSSystemFolderPath);
             this.Controls.Add(this.Start_Server);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configuration Tool";
