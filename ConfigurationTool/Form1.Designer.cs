@@ -30,7 +30,6 @@ namespace ConfigurationTool
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Start_Server = new System.Windows.Forms.Button();
             this.PRSSystemFolderPath = new System.Windows.Forms.TextBox();
             this.Choose_Folder = new System.Windows.Forms.Button();

@@ -285,6 +285,11 @@ namespace ConfigurationTool
         protected override void OnFormClosed(FormClosedEventArgs e)
         {
             base.OnFormClosed(e);
+
+            if (this.isOpened)
+            {
+                process.CloseMainWindow();
+            }
         }
 
         private void Clear_Click(object sender, EventArgs e)
