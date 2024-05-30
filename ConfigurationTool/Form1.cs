@@ -295,7 +295,7 @@ namespace ConfigurationTool
 
         private void Clear_Click(object sender, EventArgs e)
         {
-            this.Output_Box.Text = string.Empty;
+            this.Output_Box.Rows.Clear();
         }
     }
 }
