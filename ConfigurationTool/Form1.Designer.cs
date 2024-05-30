@@ -30,6 +30,7 @@ namespace ConfigurationTool
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Start_Server = new System.Windows.Forms.Button();
             this.PRSSystemFolderPath = new System.Windows.Forms.TextBox();
             this.Choose_Folder = new System.Windows.Forms.Button();
@@ -54,17 +55,22 @@ namespace ConfigurationTool
             this.label7 = new System.Windows.Forms.Label();
             this.Reset = new System.Windows.Forms.Button();
             this.Save = new System.Windows.Forms.Button();
-            this.Output_Box = new System.Windows.Forms.RichTextBox();
             this.Clear = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.Server_Host = new System.Windows.Forms.TextBox();
             this.Server_Port = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.Output_Box = new System.Windows.Forms.DataGridView();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Time_Taken = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Icon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Output_Box)).BeginInit();
             this.SuspendLayout();
             // 
             // Start_Server
@@ -321,15 +327,6 @@ namespace ConfigurationTool
             this.Save.UseVisualStyleBackColor = true;
             this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
-            // Output_Box
-            // 
-            this.Output_Box.Location = new System.Drawing.Point(345, 71);
-            this.Output_Box.Name = "Output_Box";
-            this.Output_Box.ReadOnly = true;
-            this.Output_Box.Size = new System.Drawing.Size(578, 389);
-            this.Output_Box.TabIndex = 11;
-            this.Output_Box.Text = "";
-            // 
             // Clear
             // 
             this.Clear.Location = new System.Drawing.Point(345, 464);
@@ -384,18 +381,75 @@ namespace ConfigurationTool
             this.label10.TabIndex = 17;
             this.label10.Text = "Port:";
             // 
+            // Output_Box
+            // 
+            this.Output_Box.AllowUserToAddRows = false;
+            this.Output_Box.AllowUserToDeleteRows = false;
+            this.Output_Box.AllowUserToResizeColumns = false;
+            this.Output_Box.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Output_Box.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.Output_Box.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Output_Box.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Date,
+            this.Time,
+            this.Description,
+            this.Time_Taken});
+            this.Output_Box.Location = new System.Drawing.Point(345, 71);
+            this.Output_Box.Name = "Output_Box";
+            this.Output_Box.ReadOnly = true;
+            this.Output_Box.RowHeadersVisible = false;
+            this.Output_Box.Size = new System.Drawing.Size(578, 389);
+            this.Output_Box.TabIndex = 18;
+            // 
+            // Date
+            // 
+            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            this.Date.Width = 59;
+            // 
+            // Time
+            // 
+            this.Time.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Time.HeaderText = "Time";
+            this.Time.Name = "Time";
+            this.Time.ReadOnly = true;
+            this.Time.Width = 59;
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            // 
+            // Time_Taken
+            // 
+            this.Time_Taken.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Time_Taken.HeaderText = "Time Taken";
+            this.Time_Taken.Name = "Time_Taken";
+            this.Time_Taken.ReadOnly = true;
+            this.Time_Taken.Width = 99;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(935, 499);
+            this.Controls.Add(this.Output_Box);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.Server_Port);
             this.Controls.Add(this.Server_Host);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.Clear);
-            this.Controls.Add(this.Output_Box);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.Reset);
             this.Controls.Add(this.groupBox2);
@@ -415,6 +469,7 @@ namespace ConfigurationTool
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Icon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Output_Box)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,13 +501,17 @@ namespace ConfigurationTool
         private System.Windows.Forms.Button Reset;
         private System.Windows.Forms.Button Save;
         private System.Windows.Forms.Button Connection_Button;
-        private System.Windows.Forms.RichTextBox Output_Box;
         private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox Server_Host;
         private System.Windows.Forms.TextBox Server_Port;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private DataGridView Output_Box;
+        private DataGridViewTextBoxColumn Date;
+        private DataGridViewTextBoxColumn Time;
+        private DataGridViewTextBoxColumn Description;
+        private DataGridViewTextBoxColumn Time_Taken;
     }
 }
 

@@ -166,8 +166,10 @@ namespace ConfigurationTool
         {
             this.Output_Box.Invoke((MethodInvoker)delegate
             {
-                this.Output_Box.Text += outLine.Data;
-                this.Output_Box.Text += "\n";
+                if (!string.IsNullOrEmpty(outLine.Data))
+                {
+                    this.Output_Box.Rows.Add(DateTime.Today.ToShortDateString(), DateTime.Now.ToLongTimeString(), outLine.Data.Length > 22 && DateTime.TryParse(outLine.Data.Substring(0, 9), out DateTime result) ? (outLine.Data.Contains("~") ? outLine.Data.Substring(22).Split('~')[0].Trim('.', ' ') : outLine.Data.Substring(22).Trim()) : outLine.Data.Trim(), outLine.Data.Contains("~") ? outLine.Data.Split('~')[1].Trim() : "0s");
+                }
             });
         }
 
@@ -276,8 +278,7 @@ namespace ConfigurationTool
 
             this.Output_Box.Invoke((MethodInvoker)delegate
             {
-                this.Output_Box.Text += "Server Closed!";
-                this.Output_Box.Text += "\n";
+                this.Output_Box.Rows.Add(DateTime.Today.ToShortDateString(), DateTime.Now.ToLongTimeString(), "Server Closed!", "0s");
                 this.Start_Server.Text = "Start Server";
             });
         }
